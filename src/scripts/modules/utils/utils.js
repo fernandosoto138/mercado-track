@@ -7,6 +7,12 @@ export default {
         return numberFormat.format(value);
     },
 
+    /* DD/MM/YY */
+    formatDate(date = new Date()) {
+        const options = { year: '2-digit', month: '2-digit', day: '2-digit' }
+        return date.toLocaleDateString('es-AR', options)
+    },
+
     trimTitle(title) {
         return title.substring(0, 30) + '...'
     },

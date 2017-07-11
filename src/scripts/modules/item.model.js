@@ -1,4 +1,4 @@
-import moment from 'moment'
+import Utils from './utils/utils'
 
 export default class Item {
 
@@ -29,7 +29,7 @@ export default class Item {
 }
 
 function parseHistory({ history, price }) {
-    const date = moment().format('DD/MM/YY');
+    const date = Utils.formatDate()
     if (!history) return [{ price, date }];
     const latest = history[history.length - 1];
     if (!latest || latest.price != price || latest.date != date) {
